@@ -18,7 +18,6 @@ function sumar (op1, op2, callbackFunction){
     let res = op1 + op2;
     callbackFunction(`Resultado: ${res}`);
 }
-<<<<<<< HEAD
 // ! Testing callback.
 // sumar (2, 8, imprimir);
 
@@ -44,7 +43,3 @@ let reloj = () => {
 
 // ! Testing setInterval.
 // setInterval(reloj, 5000); // Se llama cada 5 segundos.
-=======
-
-sumar (2, 8, imprimir);
->>>>>>> 521e23c11248843a814420ef6f517ad04b66e9c2
