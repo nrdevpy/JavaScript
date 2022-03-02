@@ -18,7 +18,7 @@ function sumar (op1, op2, callbackFunction){
     let res = op1 + op2;
     callbackFunction(`Resultado: ${res}`);
 }
-// ! Testing callback
+// ! Testing callback.
 // sumar (2, 8, imprimir);
 
 // * Llamadas asincronas con uso setTimeout.
@@ -27,7 +27,7 @@ function myCallbackFunction(){
     console.log('Saludo despues de 3 seg');
 }
 
-// ! Testing setTimeout
+// ! Testing setTimeout.
 /* setTimeout(myCallbackFunction, 3000);
 
 setTimeout(function(){console.log('Saludos en 3 segundos mas')}, 6000);
@@ -41,4 +41,5 @@ let reloj = () => {
     console.log(`${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`)
 }
 
+// ! Testing setInterval.
 // setInterval(reloj, 5000); // Se llama cada 5 segundos.
