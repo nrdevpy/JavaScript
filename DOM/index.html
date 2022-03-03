@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM | JavaScript</title>
+
+        <style>
+            html {
+                font-family: sans-serif;
+            }
+            h1 {
+                margin: 1rem auto;
+                text-align: center;
+
+                background-color: lightcoral;
+                padding: 1rem;
+                border-radius: 20px;
+            }
+            p {
+                font-size: 20px;
+                text-align: center;
+
+                background-color: lightseagreen;
+                padding: 1rem;
+                border-radius: 20px;
+            }
+            .button {
+                background-color: darkmagenta;
+                display: inline;
+                padding: 0.5rem 1rem;
+                font-weight: bold;
+                cursor: pointer;
+                transition: .3s;
+            }
+            .button:hover {
+                background-color: darkorchid;
+            }
+            #formulario {
+                margin-bottom: 1rem;
+            }
+        </style>
+        
+    </head>
+
+    <body>
+        <h1 id="header">Ejemplo DOM con JavaScript</h1>
+        <p id="paragraph">Saludos</p>
+
+        <form id="formulario">
+            <label for="name">Nombre</label>
+            <input type="text" id="name">
+            <br><br>
+            <label for="lastName">Apellido</label>
+            <input type="text" id="lastName">
+            <br><br>
+            <div class='button' onclick="showValues()">Mostrar</div>
+        </form>
+
+        <div id="values"></div>
+        
+        <script>
+             function showValues(){
+                 let form = document.forms['formulario'];
+                 let text = "";
+
+                 for (let elem of form){
+                     text += elem.value + '<br/>';
+                 }
+                 document.getElementById('values').innerHTML = text;
+                 document.getElementById('header').innerHTML = 'Formulario Mostrado';
+             }
+        </script>
+    </body>
+
+</html>
