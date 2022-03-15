@@ -6,17 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Storage</title>
 
+    <!-- === CSS === -->
     <style>
+        *{
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            text-align: center;
+        }
+        ul{
+            text-align: center;
+            margin: 1rem auto;
+            padding: 0;
+            background-color: lightcoral;
+            border-radius: 20px;
+            padding: .5rem;
+            max-width: 50vw;
+        }
 
+        .add__container{
+            margin-bottom: 1rem;
+        }
     </style>
     
 </head>
 <body>
     
+    <!-- Title -->
     <h1>Local Storage</h1>
+    <form>
+        <div class="add__container">
+            <label for="new-data">Introduce nombre:</label>
+            <input type="text" id="new-data">
+        </div>
+
+        <button>Añadir</button>
+        <button>Mostrar datos</button>
+    </form>
+
+    <ul>
+        <li>prueba1</li>
+        <li>prueba2</li>
+        <li>prueba3</li>
+        <li>prueba4</li>
+        <li>prueba5</li>
+    </ul>
     
+    <!-- === JavaSript === -->
     <script>
-        
+
     </script>
 </body>
 </html>
