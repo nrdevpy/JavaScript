@@ -14,16 +14,21 @@
         }
         h1{
             text-align: center;
+            background-color: lightseagreen;
+            border-radius: 10px;
         }
         form{
             text-align: center;
+            background-color: lightgreen;
+            border-radius: 10px;
+            padding: 1rem;
         }
         ul{
             text-align: center;
             margin: 1rem auto;
             padding: 0;
             background-color: lightcoral;
-            border-radius: 20px;
+            border-radius: 10px;
             padding: .5rem;
             max-width: 50vw;
         }
@@ -44,8 +49,8 @@
             <input type="text" id="new-data">
         </div>
 
-        <button onclick="addValue()">Añadir</button>
-        <button onclick="showValues()">Mostrar datos</button>
+        <button onclick="addValue()" type="button">Añadir</button>
+        <button onclick="showValues()" type="button">Mostrar datos</button>
     </form>
 
     <ul>
@@ -58,11 +63,19 @@
     
     <!-- === JavaSript === -->
     <script>
-
+        let arr = [];
+        let getStg = localStorage.getItem('names');
+        
         const addValue = () => {
+            let newData = document.getElementById('new-data').value; // Get input data.
+
+            arr.push(newData); // Add data to the array.
+            localStorage.setItem('names', arr) // Upload array to local storage.
+            console.log(getStg)
         }
 
         const showValues = () => {
+            
         }
 
     </script>
