@@ -24,12 +24,11 @@
             padding: 1rem;
         }
         ul{
-            text-align: center;
+            text-align: left;
             margin: 1rem auto;
-            padding: 0;
+            padding: .5rem 2rem;
             background-color: lightcoral;
             border-radius: 10px;
-            padding: .5rem;
             max-width: 50vw;
         }
 
@@ -39,7 +38,7 @@
     </style>
     
 </head>
-<body>
+<body onload="showValues()">
     
     <!-- Title -->
     <h1>Local Storage</h1>
@@ -53,7 +52,7 @@
         <button onclick="showValues()" type="button">Mostrar datos</button>
     </form>
 
-    <ul>
+    <ul id="insert">
         <li>prueba1</li>
         <li>prueba2</li>
         <li>prueba3</li>
@@ -70,12 +69,26 @@
             let newData = document.getElementById('new-data').value; // Get input data.
 
             arr.push(newData); // Add data to the array.
-            localStorage.setItem('names', JSON.stringify(arr)) // Upload array to local storage.
-            console.log(getStg)
+            localStorage.setItem('names', JSON.stringify(arr)); // Upload array to local storage.
+            showValues();
         }
 
         const showValues = () => {
+            console.log ('Mostrando valores...');
+            let insert = document.getElementById('insert'); // Get ul id.
+            let li = ''; // Variable to add all data li from local storage.
             
+            // Take all data from local storage.
+            if (getStg !== null) {
+                for (let i of getStg) {
+                    li += `<li>${i}</li>\n`;
+                }
+            } else {
+                console.log ('No existe dato en local storage.');
+            }
+
+            // Insert data in html.
+            insert.innerHTML = li;
         }
 
     </script>
