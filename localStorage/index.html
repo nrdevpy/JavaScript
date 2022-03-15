@@ -64,13 +64,13 @@
     <!-- === JavaSript === -->
     <script>
         let arr = [];
-        let getStg = localStorage.getItem('names');
+        let getStg = JSON.parse(localStorage.getItem('names'));
         
         const addValue = () => {
             let newData = document.getElementById('new-data').value; // Get input data.
 
             arr.push(newData); // Add data to the array.
-            localStorage.setItem('names', arr) // Upload array to local storage.
+            localStorage.setItem('names', JSON.stringify(arr)) // Upload array to local storage.
             console.log(getStg)
         }
 
