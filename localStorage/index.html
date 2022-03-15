@@ -52,16 +52,11 @@
             <input type="text" id="new-data">
         </div>
 
-        <button onclick="addValue()" type="button">Añadir</button>
-        <button onclick="showValues()" type="button">Mostrar datos</button>
+        <button onclick="addValue()">Añadir</button>
+        <button onclick="showValues()">Mostrar datos</button>
     </form>
 
     <ul id="insert">
-        <li>prueba1</li>
-        <li>prueba2</li>
-        <li>prueba3</li>
-        <li>prueba4</li>
-        <li>prueba5</li>
     </ul>
     
     <!-- === JavaSript === -->
@@ -69,12 +64,14 @@
         let arr = [];
         let getStg = JSON.parse(localStorage.getItem('names'));
 
+        // Verify that exist storage, if exist add storage to an array.
         if (getStg !== null) {
             for (let i of getStg){
                 arr.push(i);
             }
         }
         
+        // * Add value function.
         const addValue = () => {
             let newData = document.getElementById('new-data').value; // Get input data.
 
@@ -83,19 +80,18 @@
             showValues();
         }
 
+        // * Show values function.
         const showValues = () => {
-            console.log ('Mostrando valores...');
-            console.log (getStg);
             let insert = document.getElementById('insert'); // Get ul id.
             let li = ''; // Variable to add all data li from local storage.
-            
+
             // Take all data from local storage.
             if (getStg !== null) {
                 for (let i of getStg) {
                     li += `<li>${i}</li>\n`;
                 }
             } else {
-                console.log ('No existe dato en local storage.');
+                console.log ('local storage is null.');
             }
 
             // Insert data in html.
